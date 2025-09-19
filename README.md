@@ -1,12 +1,17 @@
 # END-TO-END-DATA-SCIENCE-PROJECT
 
 
+*COMPANY*: CODTECH IT SOLUTIONS
 
+*NAME*: CHITTAMSETTY NAGA VIJAY SAI
 
+*INTERN ID*: CT08DZ1376
 
+*DOMAIN*: DATA SCIENCE
 
+*DURATION*: 8 WEEKS
 
-
+*MENTOR*:  NEELA SANTHOSH KUMAR 
 
 
 
@@ -94,3 +99,15 @@ Response:
   "prediction": "setosa",
   "probability": 1.0
 }
+
+
+*OUTPUT*:
+
+<img width="552" height="316" alt="Screenshot 2025-09-19 194345" src="https://github.com/user-attachments/assets/29c08919-21a3-42a4-91a2-973ecf2021ec" />
+
+<img width="705" height="411" alt="Screenshot 2025-09-19 195359" src="https://github.com/user-attachments/assets/89d05494-4eac-4832-adb1-eb23416cb78e" />
+
+<img width="691" height="461" alt="Screenshot 2025-09-19 195542" src="https://github.com/user-attachments/assets/ca4394cf-7614-4c0e-9a79-ff02de423e00" />
+
+
+
