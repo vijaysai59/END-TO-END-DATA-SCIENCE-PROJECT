@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Iris Predictor</title>
+</head>
+<body>
+  <h1>Iris Species Predictor</h1>
+  <p>Enter values and click Predict (the form sends JSON and shows the response).</p>
+
+  <form id="predict-form">
+    {% for fname in feature_names_short %}
+      <label for="{{ fname }}">{{ fname.replace('_',' ').title() }}:</label>
+      <input type="number" step="any" id="{{ fname }}" name="{{ fname }}" required><br>
+    {% endfor %}
+    <button type="submit">Predict</button>
+  </form>
+
+  <h3>Result (JSON)</h3>
+  <pre id="result">No prediction yet.</pre>
+
+  <script>
+    document.getElementById('predict-form').addEventListener('submit', async function(e){
+      e.preventDefault();
+      const payload = {};
+      const order = {{ feature_names_short|tojson }};
+      const featureArray = [];
+      for(let i=0;i<order.length;i++){
+        const key = order[i];
+        const val = parseFloat(document.getElementById(key).value);
+        payload[key] = val;
+        featureArray.push(val);
+      }
+
+      const body = { features: featureArray }; // send as simple features list
+      const resp = await fetch('/predict', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(body)
+      });
+      const json = await resp.json();
+      document.getElementById('result').textContent = JSON.stringify(json, null, 2);
+    });
+  </script>
+</body>
+</html>
